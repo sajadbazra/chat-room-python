@@ -4,7 +4,8 @@ star project chat room in pyton
 <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
 <a href="https://www.sqlite.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a>
 </p>
-#  پروژه چت سرور – کلاینت با پایتون
+
+# پروژه چت  –سرور و کلاینت با پایتون
 
 ## ۱. مقدمه
  این یک پروژه درسی هست که میخوایم اروز باهم تست کنیم و بریم جلو و چندتا مفاهیم جدید یادبگیریم.  
@@ -165,13 +166,42 @@ import time
 from typing import Dict, Tuple, Optional
 ```
 . تایپ‌هینت‌ها برای خوانایی و ایمنی بیشتر درکد.
+```bash
+import argparse
+```
+دریافت --host و --port از خط فرمان.
+```bash
+import json, os, queue, socket, threading, time
+```
+JSON برای پیام‌ها؛ OS برای مسیر تاریخچه؛ Queue برای صف thread-safe پیام‌ها؛ Socket برای ارتباط؛ Threading برای نخ دریافت؛ Time برای زمان‌بندی ساده.
+```bash
+import tkinter as tk و from tkinter import ttk, messagebox
+```
+ساخت GUI، ویجت‌های مدرن ttk، و پیام‌های خطا/اطلاعاتی.
+```bash
+from datetime import datetime
+```
+فرمت زمان در UI.
+```bash
+ENC = "utf-8" و BUFFER = 8192
+```
+UTF-8 استاندارد؛ BUFFER اینجا زیاد استفاده مستقیم ندارد چون از خط‌محور استفاده می‌کنیم (خوب است ولی حیاتی نیست).
+```bash
+import server
+```
+این خط یعنی کلاینت می‌تواند سرور را هم استارت کند؛ برای پروژه آموزشی خوب است ولی برای محیط واقعی بهتر است جدا اجرا شوند (در ادامه اشاره شده).
+```bash
+def start_server_background(host, port):
+```
+تابعی برای اجرای سرور در یک نخ پس‌زمینه، سپس time.sleep(1) تا فرصت بالا آمدن بدهد. مهم: استفاده‌اش اختیاری است؛ برای دمو در یک ماشین مفید است.
 
 ## تست پروژه
 <p align="center">
-<img src="https://user-images.githubusercontent.com/29748439/135331788-ad66606a-ac33-4196-b482-aed932431937.gif" alt="database schema" width="720"/>
+<img src="https://raw.githubusercontent.com/sajadbazra/chat-room-python/refs/heads/main/demo/test-app.gif" alt="database schema" width="720"/>
 </p>
 
 ## توضیح کوتاه خط های پروژه
+
 ### ثابت‌ها و تنظیمات پایه
 
 ```bash
