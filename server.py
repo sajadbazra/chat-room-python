@@ -100,7 +100,9 @@ class ChatServer:
                 break
             except Exception as e:
                 print(f"[SERVER] accept error: {e}")
-
+    """
+    Copyright (c) 2025 sajjadbazra
+    """
 
     def _handle_client(self, csock: socket.socket, caddr: Tuple[str, int]):
         user_id: Optional[str] = None
@@ -137,7 +139,9 @@ class ChatServer:
             self._send_raw(csock, {"type": "register", "ok": True, "user_id": user_id})
             self._broadcast_system(f"{user_id} پیوست.")
             self._broadcast_users()
-
+            """
+            Copyright (c) 2025 sajjadbazra
+            """
             while True:
                 try:
                     line = recv_line(csock)
@@ -194,7 +198,9 @@ class ChatServer:
 
                 else:
                     self._send_to_user(user_id, {"type": "error", "error": "unknown_type"})
-
+            """
+        Copyright (c) 2025 sajjadbazra
+        """
         except Exception as e:
             print(f"[SERVER] Error with {caddr}: {e}")
         finally:
@@ -253,7 +259,9 @@ class ChatServer:
     def _broadcast(self, obj: dict, exclude: Optional[str] = None):
         with self.clients_lock:
             items = list(self.clients.items())
-
+        """
+        Copyright (c) 2025 sajjadbazra
+        """
         to_remove = []
         for uid, meta in items:
             if exclude and uid == exclude:

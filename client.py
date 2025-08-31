@@ -69,7 +69,9 @@ class ClientNet:
 
     def request_users(self):
         self._send({"type": "list"})
-
+    """
+    Copyright (c) 2025 sajjadbazra
+    """
     def _recv_loop(self):
         try:
             while self.running:
@@ -137,7 +139,9 @@ class ChatGUI:
         style.theme_use("clam")
         style.configure("TLabel", background="#fef6e4", foreground="#5c4033", font=("Segoe UI", 10))
         style.configure("TButton", background="#ff914d", foreground="white", font=("Segoe UI", 10, "bold"), padding=6)
-
+    """
+    Copyright (c) 2025 sajjadbazra
+    """
     def _build_widgets(self):
         self.txt = tk.Text(self.root, state=tk.DISABLED, wrap=tk.WORD,
                            bg="#fffdf8", fg="#333", font=("Segoe UI", 11))
@@ -168,7 +172,9 @@ class ChatGUI:
             self.net.send_chat(text)
             self._append(f"[//] {text}")
         self.entry.delete(0, tk.END)
-
+    """
+    Copyright (c) 2025 sajjadbazra
+    """
     def _poll_inbox(self):
         try:
             while True:
