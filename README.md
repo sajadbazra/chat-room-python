@@ -76,7 +76,7 @@ I also created a series of restrictions for the security part, which are very ba
 - ثبت‌نام با ارسال پیام `{"type": "register", "user_id": "Ali"}`  
 - ارسال پیام عمومی (`chat`)  
 - ارسال پیام خصوصی (`pm`)  
-- دریافت پیام‌ها با Thread جداگانه  
+- دریافت پیام‌ها با `Thread` جداگانه  
 - مدیریت پیام‌ها با `queue`  
 - درخواست لیست کاربران (`list`)  
 
@@ -86,7 +86,7 @@ I also created a series of restrictions for the security part, which are very ba
 با **Tkinter** ساخته شده و شامل:  
 - پنجره ورود → نام کاربری و دکمه ورود  
 - پنجره اصلی → نمایش پیام‌ها، ورودی پیام جدید  
-- طراحی ساده ولی قابل توسعه (رنگ‌بندی، استایل و …)  
+- طراحی ساده ولی قابل توسعه   
 
 
 
@@ -100,7 +100,7 @@ I also created a series of restrictions for the security part, which are very ba
 
 ## ۸. ذخیره تاریخچه پیام‌ها
 - امکان ذخیره پیام‌ها در فایل متنی یا دیتابیس  
-- در این نسخه فقط نمایش داده می‌شوند  
+- در این پروژه فقط نمایش داده می‌شوند  
 
 
 
@@ -108,8 +108,9 @@ I also created a series of restrictions for the security part, which are very ba
 - ارسال فایل  
 - احراز هویت با رمز عبور  
 - رمزنگاری پیام‌ها  
-- رابط کاربری پیشرفته‌تر  
+- ساخت این چت باجنگو  
 - ذخیره تاریخچه کامل گفتگوها  
+- ساخت تیکت در وبسایت با پایتون و جنگو
 
 ---
 
