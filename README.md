@@ -1,5 +1,11 @@
-# chat-room-python
-star project chat room in pyton 
+<h1 align="center">Chat app with Python and sockets</h1>
+<h3 align="center">This is my university project and I developed it.</h3>
+Hello, this is a lesson project for the National University of Skills.
+The goal of the project is to build a chat room using sockets and having GUL.
+We run the program by creating a server file and send and listen to messages in it.
+The client file enters the chat room by getting the username and starts chatting.
+I also created a series of restrictions for the security part, which are very basic.
+-Please message me if you have any new ideas because I want to implement this system for my website, which I wrote with Django.
 <p align="center">
 <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
 <a href="https://www.sqlite.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a>
@@ -17,8 +23,8 @@ star project chat room in pyton
 ###  اهداف پروژه:
 - نشان دادن چگونگی ایجاد یک سرور مرکزی که چندین کاربر را مدیریت کند  
 - اتصال چندین کلاینت به سرور و ارسال/دریافت پیام‌ها  
-- داشتن رابط کاربری گرافیکی (GUI) ساده برای کاربران  
-- بررسی اصول چندنخی (Multi-threading)  
+- داشتن رابط کاربری گرافیکی (`GUI`) ساده برای کاربران  
+- بررسی اصول چندنخی (`Multi-threading`)  
 - تمرین اصول برنامه‌نویسی امن و مدیریت خطا  
 
 
@@ -57,9 +63,9 @@ star project chat room in pyton
 
 ## ۴. ساختار سرور
 - ایجاد سوکت (`socket.socket`)  
-- Bind به آدرس و پورت  
-- Accept اتصال‌ها در یک حلقه بی‌نهایت  
-- ساخت یک Thread برای هر کاربر  
+- `Bind` به آدرس و پورت  
+- `Accept` اتصال‌ها در یک حلقه بی‌نهایت  
+- ساخت یک `Thread` برای هر کاربر  
 - مدیریت کاربران در یک دیکشنری `clients = {}`  
 - ارسال پیام‌ها به‌صورت عمومی یا خصوصی  
 - مدیریت خطاها و حذف کاربرانی که ناگهان قطع می‌شوند  
@@ -130,27 +136,27 @@ star project chat room in pyton
 ```bash
 import argparse
 ```
-- برای پارس‌کردن آرگومان‌های خط فرمان (--host, --port, --cert, --key).
+- برای پارس‌کردن آرگومان‌های خط فرمان `(--host, --port, --cert, --key)`.
 
 ```bash
 import json
 ```
-- برای سریال‌سازی/دسریال‌سازی پیام‌ها به/از JSON (پروتکل انتقال ما).
+- برای سریال‌سازی/دسریال‌سازی پیام‌ها به/از `JSON` (پروتکل انتقال ما).
 
 ```bash
 import re
 ```
-- برای اعتبارسنجی user_id با الگوی Regex.
+- برای اعتبارسنجی `user_id` با الگوی `Regex`.
 
 ```bash
 import socket
 ```
-- برای ساخت سوکت TCP (پایه‌ی ارتباط شبکه‌ای).
+- برای ساخت سوکت `TCP` (پایه‌ی ارتباط شبکه‌ای).
 
 ```bash
 import ssl
 ```
-- برای TLS اختیاری (رمزنگاری نشست TCP).
+- برای `TLS` اختیاری (رمزنگاری نشست `TCP`).
 
 ```bash
 import threading
@@ -160,7 +166,7 @@ import threading
 ```bash
 import time
 ```
-- برای ثبت timestamp پیام‌ها، و حلقه‌ی اصلی.
+- برای ثبت `timestamp` پیام‌ها، و حلقه‌ی اصلی.
 
 ```bash
 from typing import Dict, Tuple, Optional
@@ -169,7 +175,7 @@ from typing import Dict, Tuple, Optional
 ```bash
 import argparse
 ```
-- دریافت --host و --port از خط فرمان.
+- دریافت `--host` و `--port` از خط فرمان.
 ```bash
 import json, os, queue, socket, threading, time
 ```
@@ -177,7 +183,7 @@ import json, os, queue, socket, threading, time
 ```bash
 import tkinter as tk و from tkinter import ttk, messagebox
 ```
-- ساخت GUI، ویجت‌های مدرن ttk، و پیام‌های خطا/اطلاعاتی.
+- ساخت `GUI`، ویجت‌های مدرن `ttk`، و پیام‌های خطا/اطلاعاتی.
 ```bash
 from datetime import datetime
 ```
@@ -185,7 +191,7 @@ from datetime import datetime
 ```bash
 ENC = "utf-8" و BUFFER = 8192
 ```
-- UTF-8 استاندارد؛ BUFFER اینجا زیاد استفاده مستقیم ندارد چون از خط‌محور استفاده می‌کنیم (خوب است ولی حیاتی نیست).
+- `UTF-8` استاندارد؛ `BUFFER` اینجا زیاد استفاده مستقیم ندارد چون از خط‌محور استفاده می‌کنیم (خوب است ولی حیاتی نیست).
 ```bash
 import server
 ```
@@ -193,7 +199,7 @@ import server
 ```bash
 def start_server_background(host, port):
 ```
-- تابعی برای اجرای سرور در یک نخ پس‌زمینه، سپس time.sleep(1) تا فرصت بالا آمدن بدهد. مهم: استفاده‌اش اختیاری است؛ برای دمو در یک ماشین مفید است.
+- تابعی برای اجرای سرور در یک نخ پس‌زمینه، سپس `time.sleep(1)` تا فرصت بالا آمدن بدهد. مهم: استفاده‌اش اختیاری است؛ برای دمو در یک ماشین مفید است.
 
 ## تست پروژه
 <p align="center">
@@ -219,7 +225,7 @@ SOCKET_TIMEOUT = 15
 ```bash
 BACKLOG = 100
 ```
-صف اتصالات معلق در listen()؛ کنترل ظرفیت پذیرش.
+صف اتصالات معلق در `listen()`؛ کنترل ظرفیت پذیرش.
 ```bash
 USER_RE = re.compile(r"^[A-Za-z0-9_-]{1,32}$")
 ```
