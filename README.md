@@ -115,54 +115,56 @@ star project chat room in pyton
 
    ```bash
    python server.py
+   ```
 
 2. سپس کلانت را اجرا کرده.  
 
    ```bash
    python client.py
+   ```
 
 
 ## ایمپورت‌ها
 
-   ```bash
-   import argparse
-    
-- برای پارس‌کردن آرگومان‌های خط فرمان (--host, --port, --cert, --key).
+```bash
+import argparse
+```
+. برای پارس‌کردن آرگومان‌های خط فرمان (--host, --port, --cert, --key).
 
-    ```bash
-   import json
+```bash
+import json
+```
+. برای سریال‌سازی/دسریال‌سازی پیام‌ها به/از JSON (پروتکل انتقال ما).
 
-- برای سریال‌سازی/دسریال‌سازی پیام‌ها به/از JSON (پروتکل انتقال ما).
+```bash
+import re
+```
+. برای اعتبارسنجی user_id با الگوی Regex.
 
-    ```bash
-   import re
+```bash
+import socket
+```
+. برای ساخت سوکت TCP (پایه‌ی ارتباط شبکه‌ای).
 
-- برای اعتبارسنجی user_id با الگوی Regex.
+```bash
+import ssl
+```
+. برای TLS اختیاری (رمزنگاری نشست TCP).
 
-    ```bash
-   import socket
+```bash
+import threading
+```
+. برای اجرا/همزمانی: نخ پذیرش و نخ رسیدگی به هر کلاینت.
 
-- برای ساخت سوکت TCP (پایه‌ی ارتباط شبکه‌ای).
+```bash
+import time
+```
+. برای ثبت timestamp پیام‌ها، و حلقه‌ی اصلی.
 
-    ```bash
-   import ssl
-
-- برای TLS اختیاری (رمزنگاری نشست TCP).
-
-    ```bash
-   import threading
-
-- برای اجرا/همزمانی: نخ پذیرش و نخ رسیدگی به هر کلاینت.
-
-    ```bash
-   import time
-
-- برای ثبت timestamp پیام‌ها، و حلقه‌ی اصلی.
-
-    ```bash
-   from typing import Dict, Tuple, Optional
-
-- تایپ‌هینت‌ها برای خوانایی و ایمنی بیشتر درکد.
+```bash
+from typing import Dict, Tuple, Optional
+```
+. تایپ‌هینت‌ها برای خوانایی و ایمنی بیشتر درکد.
 
 ## تست پروژه
 <p align="center">
